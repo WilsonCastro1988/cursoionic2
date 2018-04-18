@@ -1,0 +1,19 @@
+<form id="myform" name="myForm" #myForm='ngForm'>
+  <input id="myName" name="myName" type="text" required="required" 
+    [(ngModel)]= "title"
+    minlength="3"
+    #myName= "ngModel"
+    [ngClass]="{'input-error': myName.invalid, 'input-ok':myName.valid}"
+    (blur)= "lostFocus()"/>
+  <input type="submit" [disabled]= "myForm.form.invalid"/>
+</form>
+<!--{{myForm.form.valid}}<br/>
+pristine:{{myForm.form.pristine}}<br/>
+touched:{{myForm.form.touched}}
+invalide: {{myName.hasError('required')}}<br/>
+minlength: {{myName.hasError('minlength')}}<br/>-->
+<div *ngIf="!myForm.form.pristine && myForm.form.invalid">
+<p *ngIf="myName.hasError('required')">El valor es requerido</p>
+<p *ngIf="myName.hasError('minlength')">El valor debe tener minimo 3 caracteres</p>
+</div>
+<hr/>

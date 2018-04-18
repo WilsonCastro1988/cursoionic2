@@ -1,0 +1,20 @@
+<p>Movies</p>
+<table>
+   <thead>
+       <tr>
+          <th>id</th> 
+          <th>movie</th> 
+          <th>director</th> 
+       </tr>
+   </thead>
+   <body>
+       <tr *ngFor="let movie of movies">
+           <td>{{movie.id}}</td>
+           <td>{{movie.name}}</td>
+           <td>{{movie.director}}</td>
+
+       </tr>
+
+   </body>
+</table>
+

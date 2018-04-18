@@ -1,0 +1,13 @@
+<form id="myform" name="myForm" #myForm='ngForm'>
+  <input id="value1" name="value1" type="number" required="required" 
+    [(ngModel)]= "valId"    
+    #valueUno= "ngModel"
+    />
+    
+  
+  <input type="button"  value="buscar" (click)= "buscar()"/>
+
+  <br/>
+   
+   {{movie.name}}
+</form>
